@@ -70,13 +70,14 @@ M = [1 -6 -4 -7 0 0 0 0;
  disp('b] Optimallösningen z* = 20.667, x* = (1.6667, 2.6667, 0)')
  disp('c] Vi får en relaxation, fler variabler betyder fler tillåtna lösningar, så det kan omöjligt bli en restriktion')
  disp('   rc = c_ny - Cbt*Binvers*a, där c_ny är målfunktionskoefficient till den nya variabeln och a är bivillkorskolumn samt rc är den reducerade kostnaden för den nya variabeln')
- 
+ disp('d] nedan')
  c_ny = 2;
  a = [3 0 1];
  
  rc = c_ny - M(1,5:7)*a';
  
  x7 = [-rc 0 3 0]';
+
  
  M = [M(:, 1:7) x7 M(:, 8)];
 

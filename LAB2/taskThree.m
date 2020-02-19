@@ -7,8 +7,8 @@
 %   max z = sum(Xi*Vi)
 %   då      sum(Xi*Pi)      <= 80
 %           sum(Xi*Qi)      <= 40
-%           X1/sum(Xi)      >= 0.2
-%           X2/sum(Xi)      >= 0.3
+%           X1              >= 0.2*sum(Xi)
+%           X2              >= 0.3*sum(Xi)
 %                       Xi  >= 0
 
 clear
@@ -32,7 +32,7 @@ linsol = solve(linprob);
 
 linsol = solve(linprob);
 
-evaluate(linprob.Objective,linsol);
+evaluate(linprob.Objective,linsol)
 
 tbl = struct2table(linsol);
 

@@ -23,13 +23,15 @@ M = [1 0 0 0 0 0 0 0 -1 -1 0;
 
  M(3,:) = (M(3,:) / 5);
  disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
- disp('x1*-6 -> w, x1*-1 -> a1, x1*-2 -> s3, x1*-1 -> s4, x1*1 -> s5')
+ fprintf('x1*-6 -> w\nx1*-1 -> a1\nx1*-2 -> s3\nx1*-1 -> s4\nx1*1 -> s5')
  
- M(1,:) = (M(1,:) - 6*M(3,:));
- M(2,:) = (M(2,:) - M(3,:));
- M(4,:) = (M(4,:) - 2*M(3,:));
- M(5,:) = (M(5,:) - M(3,:));
- M(6,:) = (M(6,:) + M(3,:));
+ %rad-operationer 
+ M(1,:) = M(1,:) - M(3,:) * M(1,2)/M(3,2);
+ M(2,:) = M(2,:) - M(3,:) * M(2,2)/M(3,2);
+ M(4,:) = M(4,:) - M(3,:) * M(4,2)/M(3,2);
+ M(5,:) = M(5,:) - M(3,:) * M(5,2)/M(3,2);
+ M(6,:) = M(6,:) - M(3,:) * M(6,2)/M(3,2);
+
  disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
 
  newline;
@@ -48,13 +50,16 @@ M = [1 0 0 0 0 0 0 0 -1 -1 0;
 
  M(2,:) = (M(2,:) / 0.6);
  disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
- disp('a1*-0.6 -> w, a1*-0.4 -> x1, a1*1.8 -> s3, a1*-0.6 -> s4, a1*-3.4 -> s5')
-
- M(1,:) = (M(1,:) - 0.6*M(2,:));
- M(3,:) = (M(3,:) - 0.4*M(2,:));
- M(4,:) = (M(4,:) + 1.8*M(2,:));
- M(5,:) = (M(5,:) - 0.6*M(2,:));
- M(6,:) = (M(6,:) - 3.4*M(2,:));
+ fprintf('x2*-0.6 -> w\nx2*-0.4 -> x1\nx2*1.8 -> s3\nx2*-0.6 -> s4\nx2*-3.4 -> s5')
+ 
+ %rad-operationer 
+ M(1,:) = M(1,:) - M(2,:) * M(1,3)/M(2,3);
+ M(3,:) = M(3,:) - M(2,:) * M(3,3)/M(2,3);
+ M(4,:) = M(4,:) - M(2,:) * M(4,3)/M(2,3);
+ M(5,:) = M(5,:) - M(2,:) * M(5,3)/M(2,3);
+ M(6,:) = M(6,:) - M(2,:) * M(6,3)/M(2,3);
+ 
+ %fixar float operationer
   for i=1:6
     for j=1:length(M)
         if abs(M(i,j)) < 0.000001
@@ -78,10 +83,12 @@ for i=1:length(M)
     M(1,i) = z(i);
 end
 disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
-disp('2*x2 -> z, 10*x1 -> z')
+fprintf('2*x2 -> z\n10*x1 -> z\n')
 
 M(1,:) = M(1,:) + 2*M(2,:);
 M(1,:) = M(1,:) + 10*M(3,:);
+
+%fixar float operationer
 for i=1:6
     for j=1:length(M)
         if abs(M(i,j)) < 0.0001
@@ -100,7 +107,7 @@ rowNames = {'z', 's2', 'x1', 's3', 's4', 's5'};
 
 M(2,:) = (M(2,:) / M(2,5));
 disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
-disp('s2*2.6667 -> z, s2*0.33333 -> x1, s2*-1 -> s3, s2*1.3333 -> s5')
+fprintf('s2*2.6667 -> z\ns2*0.33333 -> x1\ns2*-1 -> s3\ns2*1.3333 -> s5')
 
 M(1,:) = M(1,:) - M(2,:) * M(1,5)/M(2,5);
 M(3,:) = M(3,:) - M(2,:) * M(3,5)/M(2,5);
@@ -119,7 +126,7 @@ disp('Ut: s3')
 rowNames = {'z', 's2', 'x1', 's1', 's4', 's5'};
 M(4,:) = (M(4,:) / M(4,4));
 disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
-disp('s1*10 -> z, s1*5 -> s2, s1*1 -> x1, s1*-1 -> s4, s1*1 -> s5')
+fprintf('s1*10 -> z\ns1*5 -> s2\ns1*1 -> x1\ns1*-1 -> s4\ns1*1 -> s5')
 
 M(1,:) = M(1,:) - M(4,:) * M(1,4)/M(4,4);
 M(2,:) = M(2,:) - M(4,:) * M(2,4)/M(4,4);
@@ -138,7 +145,7 @@ disp('Ut: s4')
 rowNames = {'z', 's2', 'x1', 's3', 'x2', 's5'};
 M(5,:) = (M(5,:) / M(5,3));
 disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
-disp('x2*7 -> z, x2*4.5 -> s2, x2*0.5 -> x1, x2*1.5 -> s3, x2*-2.5 -> s5')
+fprintf('x2*7 -> z\nx2*4.5 -> s2\nx2*0.5 -> x1\nx2*1.5 -> s3\nx2*-2.5 -> s5\n')
 
 M(1,:) = M(1,:) - M(5,:) * M(1,3)/M(5,3);
 M(2,:) = M(2,:) - M(5,:) * M(2,3)/M(5,3);
