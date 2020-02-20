@@ -29,9 +29,6 @@ linprob.Constraints.cons4 = X2                                >= 0.3*(X1 + X2 + 
 % showproblem(linprob)
 linsol = solve(linprob);
 
-
-linsol = solve(linprob);
-
 evaluate(linprob.Objective,linsol)
 
 tbl = struct2table(linsol);
