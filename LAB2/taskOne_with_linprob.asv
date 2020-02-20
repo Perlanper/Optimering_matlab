@@ -24,7 +24,7 @@ vars = {'X1','X2'};
 outputvars = stack(tbl,vars,'NewDataVariableName','Amt','IndexVariableName','Var')
 
 fprintf('a] Optimallösningen är z*=59.3333 x*= (5.6667, 1.3333)\n')
-fprintf('b] Slacken blir [21, 4 ,0 , 0, 10.6667] vi tog det från uppgiften där vi löste allt\n   själva för att vi vet inte hur man får fram värdena på slacken med linprog\n')
-fprintf('c] De reducerade kostnaderna hittas i kolumnerna under nollvarialberna som inte är slackvariabler,\n   alltså xTn och i detta fall har vi inga sådana nollvariabler dvs rc = 0.\n')
+fprintf('b] Slacken blir [21, 4 ,0 , 0, 10.6667] vi tog det från ')
+fprintf('c]')
 
 

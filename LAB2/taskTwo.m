@@ -68,8 +68,8 @@ M = [1 -6 -4 -7 0 0 0 0;
  fprintf('maximum i x1,x2,x3 = (1.6667,2.6667,0)\n\t\t\t\t z = 20.667\n')
  disp('a] Optimalbasen = {x1,x2,s2,s3,s5}')
  disp('b] Optimallösningen z* = 20.667, x* = (1.6667, 2.6667, 0)')
- disp('c] Vi får en relaxation, fler variabler betyder fler tillåtna lösningar, så det kan omöjligt bli en restriktion')
- disp('   rc = c_ny - Cbt*Binvers*a, där c_ny är målfunktionskoefficient till den nya variabeln och a är bivillkorskolumn samt rc är den reducerade kostnaden för den nya variabeln')
+ fprintf('c] Vi får en relaxation, fler variabler betyder fler tillåtna lösningar, så det kan\n omöjligt bli en restriktion')
+ fprintf('   rc = c_ny - Cbt*Binvers*a, där c_ny är målfunktionskoefficient till den\n nya variabeln och a är bivillkorskolumn samt rc är den reducerade kostnaden för den nya variabeln\n')
  disp('d] nedan')
  c_ny = 2;
  a = [3 0 1];

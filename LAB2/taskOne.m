@@ -142,7 +142,7 @@ for i=2:6
      fprintf('row %s: %.2f.\n',rowNames{i},(M(i,9)/M(i,3)))
 end
 disp('Ut: s4')
-rowNames = {'z', 's2', 'x1', 's3', 'x2', 's5'};
+rowNames = {'z', 's2', 'x1', 's1', 'x2', 's5'};
 M(5,:) = (M(5,:) / M(5,3));
 disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
 fprintf('x2*7 -> z\nx2*4.5 -> s2\nx2*0.5 -> x1\nx2*1.5 -> s3\nx2*-2.5 -> s5\n')
@@ -156,7 +156,7 @@ disp(array2table(M,'RowNames',rowNames,'VariableNames',colNames))
 
 fprintf('a] Skuggpriset för s4 är 4.6667\nb] Ändringen blir 59.333 + 4.6667 = 64\n')
 
-disp('c]')
+disp('c] nedan:')
 Binversb = M(2:6,9);
 Binvers = M(2:end,4:8);
 for i=1:5
