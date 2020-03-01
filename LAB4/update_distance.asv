@@ -1,0 +1,11 @@
+function [distance, cameFrom] = update_distance(current_node,distance,cameFrom, graph)
+%UPDATE_DISTANCE Summary of this function goes here
+%   Detailed explanation goes here
+target_nodes = find(graph(current_node,:)); % to find the successors of the current node
+for i=1:length(target_nodes)
+distance(target_nodes(i)) = graph(current_node, target_nodes(i)); % target_nodes(i) = value of taget_nodes which will be the index needed to be changed in distance
+cameFrom(target_nodes(i)) = target_nodes(i); % updates cameFrom
+end
+
+end
+
