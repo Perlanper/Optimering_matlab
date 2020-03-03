@@ -14,6 +14,8 @@ w = [440 280 480 250 220 250 210 170 260 300 200 260 240 210 350 410 210 170 340
 %length(w)
 G = graph(s,t,w); % make the graph
 [T, pred] = minspantree(G); % gather min span tree
+distance = sum(T.Edges.Weight)
+cost = distance*50
 
 p = plot(G,'EdgeLabel',G.Edges.Weight); %plot graph
 highlight(p,T); % higlights the min span tree
