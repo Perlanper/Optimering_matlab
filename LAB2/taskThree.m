@@ -1,8 +1,8 @@
 %   Xi = Antal hektoliter av cidertyp i 
 %    i = 1, 2, 3, 4
-%   Vi = {196 210 280 442}
-%   Pi = {1.6 1.8 3.2 5.4}
-%   Qi = {1.2 1.2 1.2 1.8}
+%   Vi = {196 210 280 442} vinst 
+%   Pi = {1.6 1.8 3.2 5.4} produktion
+%   Qi = {1.2 1.2 1.2 1.8} paketering
 %
 %   max z = sum(Xi*Vi)
 %   då      sum(Xi*Pi)      <= 80

@@ -7,7 +7,7 @@ cameFrom = ones(1,numOfnodes)*NaN; % Initialize cameFrom with NaN
 NodeQueue = [1:numOfnodes];  % Initialize NodeQueue with all unexplored nodes
 current_node = start_node; % sets the current node to the start node
 
-while length(NodeQueue ~= 0)
+while (length(NodeQueue) ~= 0)
 if (current_node == start_node)
     [distance,cameFrom] = UpdateDistance(current_node, distance,cameFrom, graph); % update function for the nodes 
     NodeQueue(current_node) = [];  %removes node from the Queue -> node is explored
