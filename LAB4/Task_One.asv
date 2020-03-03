@@ -24,7 +24,7 @@ c = M(1,1:15)'
 A = M(2:17,1:15)
 
 options = optimoptions('linprog', 'Algorithm', 'dual-simplex');
-[x,fval,exitflag,output,lambda1] = linprog(c,-A,-b ,[],[],[],[],[],options)
+[x,fval,exitflag,output] = linprog(c,-A,-b ,[],[],,[],[],options)
 % -A,-b because of max-problem
 disp(x)
 
@@ -36,7 +36,7 @@ Agr = -eye(16);
 Bgr = zeros(16,1);
 
 options = optimoptions('linprog', 'Algorithm', 'dual-simplex');
-[x,fval,exitflag,output,lambda] = linprog(-b,Agr,Bgr ,A',c',zeros(size(c)),[],[],options)
+[x,fval,exitflag,output,lambda] = linprog(-b,Agr,Bgr ,A',c',zeros(size(c)),[],[],options);
 disp(x)
  
 sum(x'.*b)
