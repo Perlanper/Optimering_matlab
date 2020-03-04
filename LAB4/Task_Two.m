@@ -31,7 +31,7 @@ s = [1 1 1 2 2 2 2 3 3 4 4 5 6 6 6 7];
 t = [2 3 4 3 5 6 7 6 7 5 2 8 5 7 8 8];
 w = [47 70 24 23 88 55 66 31 42 120 25 29 31 74 79 66]; 
 d = digraph(s,t,w);
-p = plot(d,'EdgeLabel',d.Edges.Weight);
+p = plot(d,'layout','force','EdgeLabel',d.Edges.Weight);
 highlight(p, shortest_path, 'Edgecolor', 'r');
 
 fprintf("The shortest path is: ")
