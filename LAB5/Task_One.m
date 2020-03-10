@@ -1,6 +1,7 @@
 %task 1 
 
 % (a)
+disp("--------b---------manual");
 
 % max z = 30x1 + 18x2
 % when 8x1 + 5x2 <= 31
@@ -48,17 +49,14 @@ b = [31 6 2 -1]; % values
 fprintf("x1 = %f x2 = %f\nz = %f\nBest integer solution found in x = (2,3)\n",x(1),x(2),-fval(1));
 
 
-
-
-
-
-%[x, fval, exitflag, output] = intlinprog(-f, intcon, A, b, [],[], zeros(1:2)); % solver
-%fval;
-% disp(x); % display
+disp("--------a---------linprog");
+[x, fval, exitflag, output] = intlinprog(-f, intcon, A, b, [],[], zeros(1:2)); % solver
+fval %Obective function value
+disp(x); % display
 
 
 % (b)
-disp("--------b---------");
+disp("--------b---------manual");
 % max w = 3x1 + 2x2
 % when 4x1 + 5x2 <= 7
 %    2x1 + 3x2 <= 4
@@ -107,6 +105,7 @@ intcon = [1,2]; % integers
 A = [4 5; 2 3]; %Constraints
 b = [7 4]; % values 
 
+disp("--------b---------linprog");
 [x,fval, exitflag, output] = intlinprog(-f, intcon, A, b, [],[], zeros(1:2), ones(1:2)*2); % solver
-fval
+fval %Obective function value 
 disp(x) % display
